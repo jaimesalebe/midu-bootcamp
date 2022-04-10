@@ -2,7 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 const Title = ({course}) => <h1>{course}</h1> //Destructuring and oneLine (new way)
-
+const Temary = ({part, exercises}) => <p>{part} {exercises}</p>
+const Exercises = ({exercises1, exercises2, exercises3}) => { 
+  <p>Number of exercises {exercises1 + exercises2 + exercises3}</p>
+}
 /**
  * const Title = (props) => { ***ancient way****
   <h1>{props.course}</h1>     ***           ***
@@ -21,16 +24,10 @@ const App = () => {
   return (
     <div>
       <Title course={course}/>
-      <p>
-        {part1} {exercises1}
-      </p>
-      <p>
-        {part2} {exercises2}
-      </p>
-      <p>
-        {part3} {exercises3}
-      </p>
-      <p>Number of exercises {exercises1 + exercises2 + exercises3}</p>
+      <Temary part={part1} exercises={exercises1}/>
+      <Temary part={part2} exercises={exercises2}/>
+      <Temary part={part3} exercises={exercises3}/>
+      <Exercises exercises1={exercises1} exercises2={exercises2} exercises3={exercises3}/>
     </div>
   )
 }
